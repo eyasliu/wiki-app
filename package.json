@@ -1,0 +1,33 @@
+{
+  "name": "wiki-app",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eyasliu/wiki-app.git"
+  },
+  "author": "Eyas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eyasliu/wiki-app/issues"
+  },
+  "homepage": "https://github.com/eyasliu/wiki-app#readme",
+  "dependencies": {
+    "ejs": "2.3.4",
+    "include-all": "~0.1.6",
+    "rc": "1.0.1",
+    "sails": "~0.12.4",
+    "sails-disk": "~0.10.9",
+    "babel-core": "^6.11.4",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "gulp": "^3.9.1",
+    "webpack": "^1.13.1"
+  },
+  "scripts": {
+    "debug": "node debug app.js",
+    "start": "node app.js"
+  }
+}
