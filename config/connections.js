@@ -31,11 +31,6 @@ module.exports.connections = {
   // localDiskDb: {
   //   adapter: 'sails-disk'
   // },
-  sqlite3: {
-    adapter: 'waterline-sqlite3',
-    filename: '../database/db.sqlite',
-    debug: true
-  },
 
   /***************************************************************************
   *                                                                          *
@@ -45,11 +40,18 @@ module.exports.connections = {
   * Run: npm install sails-mysql                                             *
   *                                                                          *
   ***************************************************************************/
-  someMysqlServer: {
+  mysqldb: {
     adapter: 'sails-mysql',
     host: '127.0.0.1',
     user: 'root', //optional
     password: '', //optional
+    database: 'wiki' //optional
+  },
+  ksomysqldb: {
+    adapter: 'sails-mysql',
+    host: '127.0.0.1',
+    user: 'root', //optional
+    password: 'pwd+sql', //optional
     database: 'wiki' //optional
   },
 

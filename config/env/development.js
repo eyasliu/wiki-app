@@ -18,7 +18,7 @@ module.exports = {
    ***************************************************************************/
 
   models: {
-    connection: 'sqlite3'
+    connection: 'mysqldb'
   }
 
 };
