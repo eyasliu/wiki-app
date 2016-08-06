@@ -34,7 +34,6 @@ module.exports.http = {
       'startRequestTimer',
       'cookieParser',
       'session',
-      'myRequestLogger',
       'bodyParser',
       'handleBodyParserError',
       'compress',
@@ -44,6 +43,7 @@ module.exports.http = {
       'router',
       'www',
       'favicon',
+      'myRequestLogger',
       '404',
       '500'
     ],
@@ -54,10 +54,11 @@ module.exports.http = {
   *                                                                           *
   ****************************************************************************/
 
-    // myRequestLogger: function (req, res, next) {
-    //     console.log("Requested :: ", req.method, req.url);
-    //     return next();
-    // }
+    myRequestLogger: function (req, res, next) {
+        console.log("Requested :: ", req.method, req.url, res.statusCode);
+
+        return next();
+    },
 
 
   /***************************************************************************
