@@ -6,7 +6,7 @@ import run from "run-sequence";
 import WebpackDevServer from "webpack-dev-server";
 import webpackDevConfig from "./client/config/webpack.dev.js";
 import webpackProConfig from "./client/config/webpack.pro.js";
-import config from "./client/config/config.client";
+import config from "./client/config";
 import fs from "fs";
 import {exec} from "child_process";
 
@@ -35,9 +35,9 @@ gulp.task('client', ()=> {
       colors: true,
       chunks: false
     }
-  }).listen(config.clientPort, config.host, (err, stats) => {
+  }).listen(config.port, config.host, (err, stats) => {
     if (err) util.log(err);
-    util.log(`webpack was listenning: http://${config.host}:${config.clientPort}`);
+    util.log(`webpack was listenning: http://${config.host}:${config.port}`);
   });
 });
 

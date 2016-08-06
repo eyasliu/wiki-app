@@ -5,5 +5,8 @@
   "hooks": {
     "grunt": false
   },
-  "port": 8000
+  "port": 8000,
+  "paths": {
+    "public": "assets"
+  }
 }
