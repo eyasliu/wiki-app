@@ -13,13 +13,11 @@ const commonConfig = {
       cc: path.resolve('client/common/components'),
       modules: path.resolve('client/modules'),
       utils: path.resolve('client/utils'),
-
-
       framework: path.resolve('client/modules/framework')
     }
   },
   output: {
-    path: path.resolve('./assets'),
+    path: path.resolve('./assets/static'),
     filename: '[name].js',
     chunkFilename: '[name].[chunkhash:5].chunk.js',
     publicPath: '/static/'
