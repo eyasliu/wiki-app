@@ -33,7 +33,11 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': {
-    view: 'homepage'
+    view: 'homepage',
+    locals: {
+      title: "Eyas",
+      clientMode: process.env.CLIENT_MODE || "development"
+    }
   }
 
   /***************************************************************************
