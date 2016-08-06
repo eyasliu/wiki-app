@@ -11,17 +11,20 @@ module.exports = {
       defaultsTo: "[None Title]"
     },
 		tags: {
-      // type: "array",
-      // defaultsTo: []
       collection: "tag",
-      via: "posts"
+      via: "posts",
+      dominant: true
+    },
+    book: {
+    	model: 'book',
+    	defaultsTo: 1
     },
 		content: {
       type: "longtext",
       defaultsTo: ""
     },
     author: {
-      type: "integer",
+      model: 'user',
       required: true
     },
     status: {
