@@ -1,6 +1,7 @@
+import "common/style";
+import "utils/global";
 import React from 'react'
 import {render} from 'react-dom'
-import "utils/global";
 import APP from 'framework';
 
 if(process.env.NODE_ENV === "development"){
