@@ -1,1 +1,5 @@
-export default () => <div>hellowogfrld</div>
+export default class APPModule extends React.Component{
+  render(){
+    return <div>hellogdfg</div>
+  }
+}

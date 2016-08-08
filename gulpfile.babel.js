@@ -10,9 +10,7 @@ import config from "./client/config";
 import fs from "fs";
 import {exec} from "child_process";
 
-gulp.task('dev', ['client'], () => {
-  
-})
+gulp.task('dev', ['client'], () => {})
 
 
 // dev server

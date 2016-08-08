@@ -19,18 +19,6 @@ module.exports = {
       'react-dom': 'react-lite'
     }
   },
-  module: {
-    noParse: common.module.noParse,
-    loaders: [
-      {
-        test: /\.(js|jsx)$/,
-        loader: 'babel',
-        include: [path.resolve('client')],
-        exclude: [path.resolve('node_modules')]
-      }, 
-      ...common.module.loaders
-    ]
-  },
   plugins: [
     ...common.plugins,
     new webpack.optimize.UglifyJsPlugin({

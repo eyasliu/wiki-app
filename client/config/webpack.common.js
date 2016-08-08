@@ -26,6 +26,11 @@ const commonConfig = {
     noParse:[],
     loaders: [
       {
+        test: /\.(js|jsx)$/,
+        loader: 'babel',
+        include: [path.resolve('client')],
+        exclude: [path.resolve('node_modules')]
+      }, {
         test: /\.css$/,
         loader: 'style-loader!css-loader?modules&importLoaders=2&localIdentName=[local]'
       }, {

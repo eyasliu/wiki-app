@@ -12,18 +12,6 @@ module.exports = {
     ]
   },
   devtool: 'eval',
-  module: {
-    noParse: common.module.noParse,
-    loaders: [
-      {
-        test: /\.(js|jsx)$/,
-        loader: 'react-hot!babel',
-        include: [path.resolve('client')],
-        exclude: [path.resolve('node_modules')]
-      }, 
-      ...common.module.loaders
-    ]
-  },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     ...common.plugins,
