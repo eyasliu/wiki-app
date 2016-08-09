@@ -1,3 +1,3 @@
 import APPModule from './components/APPModule';
 
-export default () => <APPModule></APPModule>
+export default props => <APPModule {...props} />

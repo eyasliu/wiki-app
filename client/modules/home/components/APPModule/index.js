@@ -1,14 +1,17 @@
-import Index from '../Index';
-import Navbar from '../Navbar';
+
+import Navbar from '../common/Navbar';
 
 export default class APPModule extends React.Component{
-	constructor(props){}
+	constructor(props){
+		super()
+	}
 
 	render(){
 		return (
 			<div>
 				<Navbar />
-				<Index />
+				{this.props.children}
+				
 			</div>
 		)
 	}

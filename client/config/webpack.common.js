@@ -13,7 +13,8 @@ const commonConfig = {
       cc: path.resolve('client/common/components'),
       modules: path.resolve('client/modules'),
       utils: path.resolve('client/utils'),
-      framework: path.resolve('client/modules/framework')
+      framework: path.resolve('client/modules/framework'),
+      home: path.resolve('client/modules/home')
     }
   },
   output: {
