@@ -1,26 +1,26 @@
 export default () => (
 <div className="content-wrapper">
     <div className="content">
-        <h2 className="content-head is-center">Excepteur sint occaecat cupidatat.</h2>
+        <h2 className="content-head is-center">你身边的文档专家</h2>
 
         <div className="pure-g">
             <div className="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
 
                 <h3 className="content-subhead">
                     <i className="fa fa-rocket"></i>
-                    Get Started Quickly
+                    基础
                 </h3>
                 <p>
-                    Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+                    只专注最基础的部分，木有高深内容
                 </p>
             </div>
             <div className="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
                 <h3 className="content-subhead">
                     <i className="fa fa-mobile"></i>
-                    Responsive Layouts
+                    知识面广
                 </h3>
                 <p>
-                    Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+                    众多文档涵盖了各个领域知识
                 </p>
             </div>
             <div className="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
@@ -46,7 +46,7 @@ export default () => (
 
     <div className="ribbon l-box-lrg pure-g">
         <div className="l-box-lrg is-center pure-u-1 pure-u-md-1-2 pure-u-lg-2-5">
-            <img className="pure-img-responsive" alt="File Icons" width="300" src="/img/common/file-icons.png" />
+            <img className="pure-img-responsive" alt="File Icons" width="300" src="http://purecss.io/img/common/file-icons.png" />
         </div>
         <div className="pure-u-1 pure-u-md-1-2 pure-u-lg-3-5">
 
@@ -62,41 +62,37 @@ export default () => (
     </div>
 
     <div className="content">
-        <h2 className="content-head is-center">Dolore magna aliqua. Uis aute irure.</h2>
+        <h2 className="content-head is-center">加入我们.</h2>
 
         <div className="pure-g">
             <div className="l-box-lrg pure-u-1 pure-u-md-2-5">
                 <form className="pure-form pure-form-stacked">
                     <fieldset>
 
-                        <label htmlFor="name">Your Name</label>
+                        <label htmlFor="name">名字</label>
                         <input id="name" type="text" placeholder="Your Name" />
 
 
-                        <label htmlFor="email">Your Email</label>
+                        <label htmlFor="email">邮箱</label>
                         <input id="email" type="email" placeholder="Your Email" />
 
-                        <label htmlFor="password">Your Password</label>
+                        <label htmlFor="password">密码</label>
                         <input id="password" type="password" placeholder="Your Password" />
 
-                        <button type="submit" className="pure-button">Sign Up</button>
+                        <button type="submit" className="pure-button">立即注册</button>
                     </fieldset>
                 </form>
             </div>
 
             <div className="l-box-lrg pure-u-1 pure-u-md-3-5">
-                <h4>Contact Us</h4>
+                <h4>联系我们</h4>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat.
+                    你是找不到我的，别想了.
                 </p>
 
-                <h4>More Information</h4>
+                <h4>更多...</h4>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua.
+                    没有更多的了
                 </p>
             </div>
         </div>
@@ -104,7 +100,7 @@ export default () => (
     </div>
 
     <div className="footer l-box is-center">
-        View the source of this layout to learn more. Made with love by the YUI Team.
+        没有版权可言
     </div>
 
 </div>
