@@ -3,6 +3,8 @@ import React from 'react';
 import ReactDOM from "react-dom";
 import hashHistory from 'react-router/lib/hashHistory';
 import cx from 'classnames';
+import combineReducers from 'redux/lib/combineReducers'
+import compose from 'redux/lib/compose';
 
 import Link from "react-router/lib/Link";
 import Router from 'react-router/lib/Router';
@@ -23,6 +25,8 @@ import IndexRedirect from 'react-router/lib/IndexRedirect';
   Component: React.Component,
   RouterHistory: hashHistory,
   cx,
+  combineReducers,
+  compose,
 
   // Component
   Link,
