@@ -13,7 +13,14 @@ import IndexRedirect from 'react-router/lib/IndexRedirect';
 import IndexRoute from 'react-router/lib/IndexRoute';
 
 
-(function(objs){
+import fetch from './fetch';
+
+/**
+ * 设置全局变量
+ * @param  {object} objs，foucs 需要设置为全局变量的对象集合，objs安全设置，foucs强制设置
+ * @return {[type]}            [description]
+ */
+(function(objs, foucs){
   for(let key in objs){
     if(!window.hasOwnProperty(key)){
       window[key] = objs[key];
@@ -21,8 +28,11 @@ import IndexRoute from 'react-router/lib/IndexRoute';
       console.error("global variable ["+key+"] is already exits!")
     }
   }
+  for(let key in foucs){
+    window[key] = foucs[key]
+  }
 })({
-  React, 
+  React,
   ReactDOM,
   Component: React.Component,
   RouterHistory: hashHistory,
@@ -36,4 +46,7 @@ import IndexRoute from 'react-router/lib/IndexRoute';
   Route,
   IndexRedirect,
   IndexRoute
+}, {
+  fetch,
+  _
 })
