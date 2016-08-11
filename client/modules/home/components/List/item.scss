@@ -1,0 +1,32 @@
+.item{
+  display: inline-block;
+  img{
+    max-width: 100%;
+  }
+  h1{
+    font-weight: normal;
+    font-size: 1.3em;
+  }
+}
+.inner{
+  padding: 1em;
+  position: relative;
+  box-sizing: border-box;
+  transition: width 0.3s ease-out;
+}
+.thumb{
+  position: relative;
+}
+.link{
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 38px;
+  height: 38px;
+  margin: -21px 0 0 -21px;
+  border: 2px solid rgba(255, 255, 255, 0.75);
+  border-radius: 50%;
+  text-indent: -23em;
+  overflow: hidden;
+}

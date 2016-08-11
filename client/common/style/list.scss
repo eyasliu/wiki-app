@@ -1,10 +1,12 @@
 .list-container{
   margin-top: 60px;
-  border-top: 1px solid #555;
+  background: #2d3e50;
 }
 .filter-menu{
+  border-top: 1px solid #555;
+  border-bottom: 1px solid #555;
   background: #2d3e50;
-  height: 60px;
+  height: 61px;
   line-height: 44px;
   .pure-menu-children{
     background: #2d3e50;
@@ -33,4 +35,10 @@
   max-width: 1423px;
   margin: 0 auto;
   transition: all 0.3s ease-out;
+  &.column-2 > div{
+    width: 50%;
+  }
+  &.column-3 > div{
+    width: 33.3333%;
+  }
 }
