@@ -15,9 +15,9 @@ export default () => (
               <li className="pure-menu-item"><a href="#" className="pure-menu-link">时间</a></li>
           </ul>
           <ul className="pure-menu-list pull-right">
-              <li className="pure-menu-item"><a href="#" className="pure-menu-link">列表</a></li>
-              <li className="pure-menu-item"><a href="#" className="pure-menu-link">卡片</a></li>
-              <li className="pure-menu-item"><a href="#" className="pure-menu-link">相册</a></li>
+              <li className="pure-menu-item"><a href="#" className="pure-menu-link"><i className="fa fa-list"></i></a></li>
+              <li className="pure-menu-item"><a href="#" className="pure-menu-link"><i className="fa fa-desktop"></i></a></li>
+              <li className="pure-menu-item"><a href="#" className="pure-menu-link"><i className="fa fa-bars"></i></a></li>
           </ul>
       </div>
   </div>

@@ -12,6 +12,10 @@ module.exports = {
     ]
   },
   devtool: 'eval',
+  output: {
+    ...common.output,
+    publicPath: 'http://localhost:3000/static/'
+  },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     ...common.plugins,
