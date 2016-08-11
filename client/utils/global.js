@@ -10,6 +10,8 @@ import Link from "react-router/lib/Link";
 import Router from 'react-router/lib/Router';
 import Route from 'react-router/lib/Route';
 import IndexRedirect from 'react-router/lib/IndexRedirect';
+import IndexRoute from 'react-router/lib/IndexRoute';
+
 
 (function(objs){
   for(let key in objs){
@@ -32,5 +34,6 @@ import IndexRedirect from 'react-router/lib/IndexRedirect';
   Link,
   Router,
   Route,
-  IndexRedirect
+  IndexRedirect,
+  IndexRoute
 })

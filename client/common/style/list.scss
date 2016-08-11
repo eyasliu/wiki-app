@@ -1,0 +1,36 @@
+.list-container{
+  margin-top: 60px;
+  border-top: 1px solid #555;
+}
+.filter-menu{
+  background: #2d3e50;
+  height: 60px;
+  line-height: 44px;
+  .pure-menu-children{
+    background: #2d3e50;
+  }
+  li a{
+    color: #fff;
+    border-right: 1px solid #555;
+    padding: 0.5em 1.5em;
+    height: 60px;
+    &:hover,
+    &:focus{
+      border-right: 1px solid #555;
+      background: none;
+      color: #AECFE5;
+    }
+  }
+  .pull-right{
+    li a {
+      border-right: none;
+      border-left: 1px solid #555;
+    }
+  }
+
+}
+.list-items{
+  max-width: 1423px;
+  margin: 0 auto;
+  transition: all 0.3s ease-out;
+}
