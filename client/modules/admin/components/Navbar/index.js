@@ -27,7 +27,7 @@ export default class Navbar extends Component{
         style={{float: 'right'}}
       >
         <Item key="mail">
-          <Icon type="mail" />导航一
+          <Icon type="mail" />文档
         </Item>
         <Item key="app" disabled>
           <Icon type="appstore" />导航二
