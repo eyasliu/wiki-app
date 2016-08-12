@@ -1,6 +1,8 @@
 import { Menu, Icon } from 'antd';
+import style from './style.scss'
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
+const Item = Menu.Item
 
 export default class Navbar extends Component{
 	constructor(){
@@ -17,30 +19,34 @@ export default class Navbar extends Component{
   }
   render() {
     return (
+  	<div className={style.navbar}>
+  		<a href="" className={style.logo}>Eyas Admin</a>
       <Menu onClick={this.handleClick}
         selectedKeys={[this.state.current]}
         mode="horizontal"
+        style={{float: 'right'}}
       >
-        <Menu.Item key="mail">
+        <Item key="mail">
           <Icon type="mail" />导航一
-        </Menu.Item>
-        <Menu.Item key="app" disabled>
+        </Item>
+        <Item key="app" disabled>
           <Icon type="appstore" />导航二
-        </Menu.Item>
+        </Item>
         <SubMenu title={<span><Icon type="setting" />导航 - 子菜单</span>}>
           <MenuItemGroup title="分组1">
-            <Menu.Item key="setting:1">选项1</Menu.Item>
-            <Menu.Item key="setting:2">选项2</Menu.Item>
+            <Item key="setting:1">选项1</Item>
+            <Item key="setting:2">选项2</Item>
           </MenuItemGroup>
           <MenuItemGroup title="分组2">
-            <Menu.Item key="setting:3">选项3</Menu.Item>
-            <Menu.Item key="setting:4">选项4</Menu.Item>
+            <Item key="setting:3">选项3</Item>
+            <Item key="setting:4">选项4</Item>
           </MenuItemGroup>
         </SubMenu>
-        <Menu.Item key="alipay">
+        <Item key="alipay">
           <a href="http://www.alipay.com/" target="_blank">导航四 - 链接</a>
-        </Menu.Item>
+        </Item>
       </Menu>
+    </div>
     );
   }
 }

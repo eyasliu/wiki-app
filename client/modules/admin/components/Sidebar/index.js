@@ -1,4 +1,6 @@
 import { Menu, Icon } from 'antd';
+import style from './style.scss';
+
 const SubMenu = Menu.SubMenu;
 
 
@@ -8,7 +10,14 @@ export default class Sidebar extends Component{
 		this.state = {
 			current: '1',
       openKeys: [],
+      height: document.body.clientHeight - 50
 		}
+  	window.addEventListener('resize', ::this.resize)
+	}
+	resize(){
+		this.setState({
+			height: document.body.clientHeight - 50
+		})
 	}
 	handleClick(e) {
     console.log('click ', e);
@@ -22,18 +31,21 @@ export default class Sidebar extends Component{
       openKeys: info.open ? info.keyPath : info.keyPath.slice(1),
     });
   }
+  componentDidMount(){
+  }
 	render(){
 		return (
-	<div className="sidebar">
-		<div className="inner">
+	<div className={style.sidebar}>
+		<div className={style.inner}>
 			<Menu onClick={::this.handleClick}
-        style={{ width: 240 }}
+        style={{ width: 240, height: this.state.height }}
         openKeys={this.state.openKeys}
         onOpen={::this.onToggle}
         onClose={::this.onToggle}
         selectedKeys={[this.state.current]}
         mode="inline"
       >
+      	<Menu.Item key="dashboard"><span><Icon type="tablet" /><span>Dashboard</span></span></Menu.Item>
         <SubMenu key="sub1" title={<span><Icon type="mail" /><span>导航一</span></span>}>
           <Menu.Item key="1">选项1</Menu.Item>
           <Menu.Item key="2">选项2</Menu.Item>
