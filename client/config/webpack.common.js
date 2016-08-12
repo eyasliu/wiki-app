@@ -14,7 +14,8 @@ const commonConfig = {
       modules: path.resolve('client/modules'),
       utils: path.resolve('client/utils'),
       framework: path.resolve('client/modules/framework'),
-      home: path.resolve('client/modules/home')
+      home: path.resolve('client/modules/home'),
+      admin: path.resolve('client/modules/admin')
     }
   },
   output: {

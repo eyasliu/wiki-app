@@ -14,6 +14,7 @@
   },
   "homepage": "https://github.com/eyasliu/wiki-app#readme",
   "dependencies": {
+    "antd": "^1.8.0",
     "async": "^2.0.1",
     "babel-core": "^6.11.4",
     "babel-eslint": "^6.1.2",
