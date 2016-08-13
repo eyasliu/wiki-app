@@ -4,7 +4,6 @@ import style from './style.scss';
 const SubMenu = Menu.SubMenu;
 const Item = Menu.Item;
 
-
 export default class Sidebar extends Component{
 	constructor(){
 		super();
@@ -21,11 +20,13 @@ export default class Sidebar extends Component{
 		})
 	}
 	handleClick(e) {
-    console.log('click ', e);
+    // console.log('click ', e);
     this.setState({
       current: e.key,
       openKeys: e.keyPath.slice(1),
     });
+
+    e.item.props.href && RouterHistory.push(e.item.props.href)
   }
   onToggle(info) {
     this.setState({
@@ -46,10 +47,10 @@ export default class Sidebar extends Component{
         selectedKeys={[this.state.current]}
         mode="inline"
       >
-      	<Item key="dashboard"><span><Icon type="tablet" /><span>Dashboard</span></span></Item>
+      	<Item key="dashboard" href="/admin/dashboard"><span><Icon type="tablet" /><span>Dashboard</span></span></Item>
         <SubMenu key="sub1" title={<span><Icon type="mail" /><span>文档</span></span>}>
-          <Item key="1">列表</Item>
-          <Item key="2">新建</Item>
+          <Item key="1" href="/admin/books">列表</Item>
+          <Item key="2" href="/admin/books/add">新建</Item>
           <Item key="3">标签管理</Item>
           <Item key="4">设置</Item>
         </SubMenu>
