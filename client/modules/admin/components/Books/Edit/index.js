@@ -1,6 +1,7 @@
 import { Form, Input, Button, Checkbox, Radio, Tooltip, Icon, Tabs } from 'antd';
 import Base from './Base';
-import Content from './Content';
+import ListItem from './ListItems';
+import Content from './Content'
 
 const TabPane = Tabs.TabPane;
 const FormItem = Form.Item;
@@ -12,7 +13,7 @@ export default class Add extends Component{
 	}
 
 	callback(key) {
-	  console.log(key);
+	  // console.log(key);
 	}
 
 	render(){
@@ -23,7 +24,10 @@ export default class Add extends Component{
 			    	<Base></Base>
 			    </TabPane>
 			    <TabPane tab="内容" key="2">
-			    	<Content></Content>
+			    	<div>
+				    	<ListItem></ListItem>
+			    		<Content></Content>
+			    	</div>
 			    </TabPane>
 			  </Tabs>
 			</div>

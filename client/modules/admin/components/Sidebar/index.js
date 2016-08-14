@@ -51,7 +51,7 @@ export default class Sidebar extends Component{
         <SubMenu key="sub1" title={<span><Icon type="mail" /><span>文档</span></span>}>
           <Item key="1" href="/admin/books">列表</Item>
           <Item key="2" href="/admin/books/add">新建</Item>
-          <Item key="3">标签管理</Item>
+          <Item key="3" href="/admin/books/tags">标签管理</Item>
           <Item key="4">设置</Item>
         </SubMenu>
         <SubMenu key="sub2" title={<span><Icon type="appstore" /><span>导航二</span></span>}>
