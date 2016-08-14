@@ -38,14 +38,14 @@ const commonConfig = {
       }, {
         test: /\.(sass|scss)$/,
         loader: 'style-loader!css-loader?modules&importLoaders=2&localIdentName=[local]___[hash:base64:5]!postcss-loader',
-        exclude: [path.resolve('client/common/style')]
+        exclude: [path.resolve('client/common/style'), /\.global\.(sass|scss)$/]
       }, {
         test: /\.less$/,
         loader: 'style-loader!css-loader?modules&importLoaders=2&localIdentName=[local]___[hash:base64:5]!less-loader'
       }, {
         test: /\.(sass|scss)$/,
         loader: 'style-loader!css-loader!postcss-loader',
-        include: [path.resolve('client/common/style')]
+        include: [path.resolve('client/common/style'), /\.global\.(sass|scss)$/]
       }, {
         test: /\.(png|jpg|jpeg|gif)$/,
         loader: 'url-loader?limit=8192&name=resource/img/[hash].[ext]'

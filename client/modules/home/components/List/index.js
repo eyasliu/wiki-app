@@ -1,3 +1,4 @@
+import "./list.global.scss";
 import Filter from './Filter';
 import List from './List';
 

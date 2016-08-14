@@ -1,4 +1,4 @@
-
+import "./layout.global.scss";
 import Navbar from '../common/Navbar';
 
 export default class APPModule extends React.Component{

@@ -1,3 +1,6 @@
+import "antd/dist/antd.css";
+import "./admin.global";
+
 import Navbar from '../Navbar';
 import Sidebar from '../Sidebar';
 import style from './style.scss';
