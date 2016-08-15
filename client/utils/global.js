@@ -5,6 +5,8 @@ import hashHistory from 'react-router/lib/hashHistory';
 import cx from 'classnames';
 import combineReducers from 'redux/lib/combineReducers'
 import compose from 'redux/lib/compose';
+import bindActionCreators from 'redux/lib/bindActionCreators';
+import {connect} from 'react-redux';
 
 import Link from "react-router/lib/Link";
 import Router from 'react-router/lib/Router';
@@ -39,6 +41,8 @@ import fetch from './fetch';
   cx,
   combineReducers,
   compose,
+  bindActionCreators,
+  connect,
 
   // Component
   Link,

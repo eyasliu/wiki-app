@@ -1,9 +1,15 @@
 import { Form, Input, Button, Checkbox, Radio, Tooltip, Icon } from 'antd';
+import * as actions from 'admin/actions/books'
 
 const FormItem = Form.Item;
 const RadioGroup = Radio.Group;
 
-class Add extends Component{
+@connect(
+	state => state.admin.books,
+	dispatch => bindActionCreators(actions, dispatch)
+)
+@Form.create()
+export default class Add extends Component{
 	constructor(props){
 		super();
 	}
@@ -47,4 +53,3 @@ class Add extends Component{
 	}
 }
 
-export default Form.create()(Add)
