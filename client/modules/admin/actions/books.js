@@ -1,5 +1,6 @@
 export function create(data){
-	fetch(config.baseUrl + '/books', {
+	console.log(data);
+	F(config.baseUrl + '/books', {
 		method: 'POST',
 		body: JSON.stringify(data)
 	}).then(res => res.json())

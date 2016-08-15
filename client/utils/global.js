@@ -6,6 +6,7 @@ import cx from 'classnames';
 import combineReducers from 'redux/lib/combineReducers'
 import compose from 'redux/lib/compose';
 import bindActionCreators from 'redux/lib/bindActionCreators';
+import bindActionGroups from 'redux-bind-action-groups';
 import {connect} from 'react-redux';
 
 import Link from "react-router/lib/Link";
@@ -16,6 +17,7 @@ import IndexRoute from 'react-router/lib/IndexRoute';
 
 
 import fetch from './fetch';
+import config from './config';
 
 /**
  * 设置全局变量
@@ -42,6 +44,7 @@ import fetch from './fetch';
   combineReducers,
   compose,
   bindActionCreators,
+  bindActionGroups,
   connect,
 
   // Component
@@ -51,6 +54,7 @@ import fetch from './fetch';
   IndexRedirect,
   IndexRoute
 }, {
-  fetch,
-  _
+  F: fetch,
+  _,
+  config
 })

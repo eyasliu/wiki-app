@@ -6,7 +6,7 @@ const RadioGroup = Radio.Group;
 
 @connect(
 	state => state.admin.books,
-	dispatch => bindActionCreators(actions, dispatch)
+	dispatch => bindActionGroups({act: actions}, dispatch)
 )
 @Form.create()
 export default class Add extends Component{
@@ -15,7 +15,8 @@ export default class Add extends Component{
 	}
 	handleSubmit(e) {
     e.preventDefault();
-    console.log('收到表单值：', this.props.form.getFieldsValue());
+    this.props.act.create(this.props.form.getFieldsValue())
+    // console.log('收到表单值：', this.props.form.getFieldsValue());
   }
 	render(){
 		const { getFieldProps } = this.props.form;
@@ -23,6 +24,7 @@ export default class Add extends Component{
       labelCol: { span: 6 },
       wrapperCol: { span: 14 },
     };
+    console.log(this.props)
 		return (
 			<div>
 				<Form horizontal onSubmit={::this.handleSubmit}>
