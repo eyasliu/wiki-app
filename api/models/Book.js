@@ -10,6 +10,9 @@ module.exports = {
 			type: 'string',
 			required: true
 		},
+		descript: {
+			type: 'string'
+		},
 		author: {
 			model: 'user',
 			required: true
