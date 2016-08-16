@@ -44,7 +44,7 @@ export default class Add extends Component{
 	          {...formItemLayout}
 	          label="是否显示"
 	        >
-	          <Checkbox checked={true} {...getFieldProps('show')}></Checkbox>
+	          <Checkbox defaultChecked={true} {...getFieldProps('status', { initialValue: true })}></Checkbox>
 	        </FormItem>
 	        <FormItem wrapperCol={{ span: 16, offset: 6 }} style={{ marginTop: 24 }}>
 	          <Button type="primary" htmlType="submit">确定</Button>

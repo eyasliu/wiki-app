@@ -4,5 +4,15 @@ const init = {
 }
 
 export default function(state = init, action){
-	return state;
+	switch(action.type){
+		case 'GETLIST':
+			return {
+				...state,
+				list: [
+					...action.data
+				]
+			}
+		default :
+			return state;
+	}
 }

@@ -1,63 +1,53 @@
 import { Table } from 'antd';
 import Filter from './Filter';
+import {getList, remove} from 'admin/actions/books';
 
-const columns = [{
-  title: '姓名',
-  dataIndex: 'name',
-  key: 'name',
-  render: (text) => <a href="#">{text}</a>,
-}, {
-  title: '年龄',
-  dataIndex: 'age',
-  key: 'age',
-}, {
-  title: '住址',
-  dataIndex: 'address',
-  key: 'address',
-}, {
-  title: '操作',
-  key: 'operation',
-  render: (text, record) => (
-    <span>
-      <a href="#">操作一{record.name}</a>
-      <span className="ant-divider"></span>
-      <a href="#">操作二</a>
-      <span className="ant-divider"></span>
-      <a href="#" className="ant-dropdown-link">
-        更多
-      </a>
-    </span>
-  ),
-}];
-
-
-const data = [{
-  key: '1',
-  name: '胡彦斌',
-  age: 32,
-  address: '西湖区湖底公园1号',
-}, {
-  key: '2',
-  name: '胡彦祖',
-  age: 42,
-  address: '西湖区湖底公园1号',
-}, {
-  key: '3',
-  name: '李大嘴',
-  age: 32,
-  address: '西湖区湖底公园1号',
-}];
-
+@connect(
+  state => ({list:state.admin.books.list}),
+  dispatch => bindActionGroups({act: {getList, remove}}, dispatch)
+)
 export default class List extends Component{
 	constructor(props){
 		super();
+    console.log(props)
+    props.act.getList();
 	}
+
+  columns = [{
+    title: 'ID',
+    dataIndex: 'id',
+    key: 'id'
+  }, {
+    title: '名称',
+    dataIndex: 'name',
+    key: 'name',
+    render: text => <a href="#">{text}</a>
+  }, {
+    title: '描述',
+    dataIndex: 'descript',
+    key: 'descript',
+  }, {
+    title: '操作',
+    key: 'operation',
+    render: (text, record) => (
+      <span>
+        <a href="#"> 查看 </a>
+        <span className="ant-divider"></span>
+        <a href="#"> 编辑 </a>
+        <span className="ant-divider"></span>
+        <a href="#" onClick={e => {
+          this.props.act.remove(record.id)
+          e.preventDefault();
+        }}> 删除 </a>
+      </span>
+    ),
+  }]
 
 	render(){
 		return (
 			<div>
 				<Filter></Filter>
-				<Table columns={columns} dataSource={data} />
+				<Table columns={this.columns} dataSource={this.props.list} />
 			</div>
 		)
 	}

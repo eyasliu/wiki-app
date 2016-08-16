@@ -17,6 +17,14 @@ module.exports = {
 			model: 'user',
 			required: true
 		},
+		status: {
+			/*
+      1 active
+      2 disable
+       */
+      type: "integer",
+      defaultsTo: 1
+		},
 		posts: {
 			collection: 'post',
 			via: 'book'
