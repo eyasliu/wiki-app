@@ -1,22 +1,29 @@
-export function create(data){
-	console.log(data);
-	F(config.baseUrl + '/book', {
-		method: 'POST',
-		body: JSON.stringify(data)
-	}).then(res => res.json())
-	.then(data => {
-		console.log(data);
-	})
+const C = Constant('admin-books');
+
+export function updateOrCreate(data){
+	const isNew = data.id;
+	const url = config.baseUrl + '/book' + (isNew ? '' : '/' + data.id);
+	return dispatch => {
+		F(url, {
+			method: isNew ? 'POST' : 'PUT',
+			data: JSON.stringify(data),
+		}).then(res => res.json())
+		.then(data => {
+			dispatch({
+				type: isNew ? C.Create : C.Update
+			})
+		})
+	}
 }
 
 export function getList(params){
   return dispatch => {
   	F(config.baseUrl + '/book')
   	.then(res => res.json())
-		.then(data => {
+		.then(list => {
 			dispatch({
-				type: 'GETLIST',
-				data
+				type: C.GetList,
+				list
 			})
 		})
 	}
@@ -29,8 +36,22 @@ export function remove(id){
 		})
 		.then(res => res.json())
 		.then(data => {
-			type: 'DELETE',
-			id
+			
 		})
+	}
+}
+
+export function getView(id){
+	return dispatch => {
+		F(config.baseUrl + '/book/' + id)
+		.then(res => res.json())
+		.then(data => {
+			dispatch({type: C.GetView, data})
+		})
+	}
+}
+export function resetView(){
+	return {
+		type: C.ResetView
 	}
 }

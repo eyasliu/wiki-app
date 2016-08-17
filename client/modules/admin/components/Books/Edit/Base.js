@@ -5,26 +5,28 @@ const FormItem = Form.Item;
 const RadioGroup = Radio.Group;
 
 @connect(
-	state => state.admin.books,
+	null,
 	dispatch => bindActionGroups({act: actions}, dispatch)
 )
 @Form.create()
 export default class Add extends Component{
 	constructor(props){
 		super();
+		console.log(props)
 	}
 	handleSubmit(e) {
     e.preventDefault();
-    this.props.act.create(this.props.form.getFieldsValue())
+    this.props.act[(this.props.isNew ? 'create' : 'update')](this.props.form.getFieldsValue())
     // console.log('收到表单值：', this.props.form.getFieldsValue());
   }
 	render(){
 		const { getFieldProps } = this.props.form;
     const formItemLayout = {
       labelCol: { span: 6 },
-      wrapperCol: { span: 14 },
+      wrapperCol: { span: 14 }
     };
-    console.log(this.props)
+    const {data} = this.props;
+    
 		return (
 			<div>
 				<Form horizontal onSubmit={::this.handleSubmit}>
@@ -32,19 +34,19 @@ export default class Add extends Component{
 	          {...formItemLayout}
 	          label="名称"
 	        >
-	          <Input type="text" placeholder="" {...getFieldProps('name', { initialValue: this.props.name||'' })} />
+	          <Input type="text" placeholder="" {...getFieldProps('name', { initialValue: data.name||'' })} />
 	        </FormItem>
 	        <FormItem
 	          {...formItemLayout}
 	          label="描述"
 	        >
-	          <Input type="textarea" {...getFieldProps('descript', { initialValue: '' })} placeholder="" />
+	          <Input type="textarea" {...getFieldProps('descript', { initialValue: data.descript })} placeholder="" />
 	        </FormItem>
 	        <FormItem
 	          {...formItemLayout}
 	          label="是否显示"
 	        >
-	          <Checkbox defaultChecked={true} {...getFieldProps('status', { initialValue: true })}></Checkbox>
+	          <Checkbox defaultChecked={data.status == 1} {...getFieldProps('status', { initialValue: (data.status == 1) })}></Checkbox>
 	        </FormItem>
 	        <FormItem wrapperCol={{ span: 16, offset: 6 }} style={{ marginTop: 24 }}>
 	          <Button type="primary" htmlType="submit">确定</Button>

@@ -21,7 +21,7 @@ export default class List extends Component{
     title: '名称',
     dataIndex: 'name',
     key: 'name',
-    render: text => <a href="#">{text}</a>
+    render: (text, record) => <Link to={"/admin/books/edit/" + record.id}>{text}</Link>
   }, {
     title: '描述',
     dataIndex: 'descript',
@@ -33,7 +33,7 @@ export default class List extends Component{
       <span>
         <a href="#"> 查看 </a>
         <span className="ant-divider"></span>
-        <a href="#"> 编辑 </a>
+        <Link to={"/admin/books/edit/" + record.id}>编辑</Link>
         <span className="ant-divider"></span>
         <a href="#" onClick={e => {
           this.props.act.remove(record.id)

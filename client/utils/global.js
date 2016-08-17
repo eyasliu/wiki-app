@@ -8,6 +8,8 @@ import compose from 'redux/lib/compose';
 import bindActionCreators from 'redux/lib/bindActionCreators';
 import bindActionGroups from 'redux-bind-action-groups';
 import {connect} from 'react-redux';
+import Constant from 'react-constant';
+import Reducer from 'redux-create-reducer-curry';
 
 import Link from "react-router/lib/Link";
 import Router from 'react-router/lib/Router';
@@ -46,6 +48,8 @@ import config from './config';
   bindActionCreators,
   bindActionGroups,
   connect,
+  Constant,
+  Reducer,
 
   // Component
   Link,

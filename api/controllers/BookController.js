@@ -1,13 +1,15 @@
 module.exports = {
 	find: function(req, res){
 		Book.find({status: 1})
+			.populate(['posts', 'author'])
 			.then(data => {
 				res.json(data);
 			})
 	},
 	findOne: function(req, res){
-		Book.findOne(req.param('id'))
-			.populate(['tags', 'author'])
+		sails.log(req.param('id'))
+		Book.findOne(parseInt(req.param('id')))
+			.populate(['posts', 'author'])
 			.then(data => {
 				res.json(data)
 			})
