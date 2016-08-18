@@ -1,14 +1,14 @@
 const C = Constant('admin-books');
 
 export function updateOrCreate(data){
-	const isNew = data.id;
+	const isNew = !data.id;
 	const url = config.baseUrl + '/book' + (isNew ? '' : '/' + data.id);
 	return dispatch => {
 		F(url, {
 			method: isNew ? 'POST' : 'PUT',
-			data: JSON.stringify(data),
+			body: JSON.stringify(data),
 		}).then(res => res.json())
-		.then(data => {
+		.then(json => {
 			dispatch({
 				type: isNew ? C.Create : C.Update
 			})

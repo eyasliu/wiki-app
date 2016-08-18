@@ -12,12 +12,15 @@ const RadioGroup = Radio.Group;
 export default class Add extends Component{
 	constructor(props){
 		super();
-		console.log(props)
 	}
 	handleSubmit(e) {
+		var data = this.props.form.getFieldsValue()
+		if(this.props.data.id){
+			data.id = this.props.data.id
+		}
+		console.log(data);
+    this.props.act.updateOrCreate(data)
     e.preventDefault();
-    this.props.act[(this.props.isNew ? 'create' : 'update')](this.props.form.getFieldsValue())
-    // console.log('收到表单值：', this.props.form.getFieldsValue());
   }
 	render(){
 		const { getFieldProps } = this.props.form;

@@ -5,7 +5,7 @@ const init = {
 	view: {}
 }
 
-export default Reducer({
+export default Reducer(init)({
 [C.of('Create')]: (state, {data}) => ({
 	...state,
 	list: [
@@ -22,10 +22,10 @@ export default Reducer({
 		]
 	}
 },
-[C.of('GetList')]: (state, {list}) => ({
+[C.of('GetList')]: (state, action) => ({
 	...state,
 	list: [
-		...list
+		...action.list
 	]
 }),
 [C.of('GetView')]: (state, {data}) => ({
@@ -37,4 +37,4 @@ export default Reducer({
 	view: {}
 })
 
-})(init)
+})
