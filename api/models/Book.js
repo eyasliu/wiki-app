@@ -17,10 +17,15 @@ module.exports = {
 			model: 'user',
 			required: true
 		},
+		tags: {
+			collection: 'tag',
+			via: 'books'
+		},
 		status: {
 			/*
       1 active
       2 disable
+      3 deleted
        */
       type: "integer",
       defaultsTo: 1

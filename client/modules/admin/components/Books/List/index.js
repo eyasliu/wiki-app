@@ -1,4 +1,4 @@
-import { Table } from 'antd';
+import { Table, Icon } from 'antd';
 import Filter from './Filter';
 import {getList, remove} from 'admin/actions/books';
 
@@ -26,6 +26,11 @@ export default class List extends Component{
     title: '描述',
     dataIndex: 'descript',
     key: 'descript',
+  }, {
+    title: '显示',
+    dataIndex: 'status',
+    key: 'status',
+    render: text => <Icon type={text == 1 ? 'check' : 'cross'}></Icon>
   }, {
     title: '操作',
     key: 'operation',

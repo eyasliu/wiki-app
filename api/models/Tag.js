@@ -15,6 +15,10 @@ module.exports = {
     posts: {
       collection: "post",
       via: "tags"
+    },
+    books: {
+      collection: "book",
+      via: "tags"
     }
   }
 }

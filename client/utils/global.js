@@ -10,6 +10,7 @@ import bindActionGroups from 'redux-bind-action-groups';
 import {connect} from 'react-redux';
 import Constant from 'react-constant';
 import Reducer from 'redux-create-reducer-curry';
+import uuid from 'node-uuid';
 
 import Link from "react-router/lib/Link";
 import Router from 'react-router/lib/Router';
@@ -50,6 +51,7 @@ import config from './config';
   connect,
   Constant,
   Reducer,
+  uuid,
 
   // Component
   Link,

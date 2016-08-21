@@ -1,30 +1,28 @@
 module.exports = {
 	find: function(req, res){
-		Book.find({status: {'<': 3}})
-			.populate(['posts', 'author', 'tags'])
+		Tag.find()
 			.then(data => {
 				res.json(data);
 			})
 	},
 	findOne: function(req, res){
-		Book.findOne(parseInt(req.param('id')))
-			.populate(['posts', 'author', 'tags'])
+		Tag.findOne(parseInt(req.param('id')))
+			.populate(['posts', 'author'])
 			.then(data => {
 				res.json(data)
 			})
 	},
 	create: function(req, res){
 		var data = req.body
-		data.author = 1;
-		data.status = data.status ? 1 : 2;
-		Book.create(data).then(result => {
+		Tag.findOrCreate({
+			name: data.name
+		}).then(result => {
 			res.json(result)
 		}).catch(err => console.log(err))
 	},
 	update: function(req, res){
 		var body = req.body
-		body.status = body.status ? 1 : 2;
-		Book.update({
+		Tag.update({
 			id: req.param('id')
 		}, body)
 		.then(data => {
@@ -39,11 +37,7 @@ module.exports = {
 	},
 	destroy: function(req, res){
 		// status == 3 为删除
-		Book.update({
-			id: req.param('id')
-		}, {
-			status: 3
-		})
+		Tag.destroy(req.param('id'))
 		.then(result => {
 			res.json(result)
 		})
