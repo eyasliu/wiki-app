@@ -46,8 +46,8 @@ export default class Add extends Component{
 			    </TabPane>
 			    <TabPane tab="内容" key="2">
 			    	<div>
-				    	<ListItem></ListItem>
 			    		<Content></Content>
+				    	<ListItem></ListItem>
 			    	</div>
 			    </TabPane>
 			  </Tabs>
