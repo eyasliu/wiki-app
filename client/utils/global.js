@@ -42,6 +42,7 @@ import config from './config';
   React,
   ReactDOM,
   Component: React.Component,
+  PropTypes: React.PropTypes,
   RouterHistory: hashHistory,
   cx,
   combineReducers,
