@@ -1,16 +1,29 @@
 import { Form, Input, Button, Checkbox, Radio, Tooltip, Icon } from 'antd';
+import {MarkdownEditor} from 'react-markdown-editor';
 import Select from 'antd/lib/select'
+
+import {updateOrCreate} from 'admin/actions/posts';
+
 const FormItem = Form.Item;
 const RadioGroup = Radio.Group;
 const Option = Select.Option;
 
 
 @Form.create()
+@connect(
+  state => ({
+    data: {}
+  }),
+  dispatch => bindActionGroups({
+    postAct: {updateOrCreate}
+  }, dispatch)
+)
 class PostForm extends Component{
 	constructor(){
 		super()
 		this.state = {
-			tags: []
+			tags: [],
+      content: ''
 		}
 	}
 
@@ -21,7 +34,13 @@ class PostForm extends Component{
 			data.id = this.props.data.id
 		}
 		data.tags = this.state.tags;
-    this.props.bookAct.updateOrCreate(data)
+    data.content = this.state.content;
+    // test data
+    data.author = 1
+    data.post = 1
+
+
+    this.props.postAct.updateOrCreate(data)
   }
   tagChange(selected){
   	this.setState({
@@ -66,9 +85,13 @@ class PostForm extends Component{
         </FormItem>
         <FormItem
           {...formItemLayout}
-          label="描述"
+          label="内容"
         >
-          <Input type="textarea" {...getFieldProps('descript', { initialValue: data.descript })} placeholder="" />
+          <MarkdownEditor initialContent={this.state.content} iconsSet="font-awesome" onContentChange={val => {
+            this.setState({
+              content: val
+            })
+          }}/>
         </FormItem>
         <FormItem wrapperCol={{ span: 16, offset: 6 }} style={{ marginTop: 24 }}>
           <Button type="primary" htmlType="submit">确定</Button>
